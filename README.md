@@ -1,3 +1,42 @@
-# Local Determancy
+# Local Determancy (LD)
 
 A python package for assessing local determinacy in incomplete markets models.
+
+## Requirements and installation
+
+LD runs on Python 3.7 or newer, and requires Python's core numerical libraries (NumPy, SciPy, Numba). LD relies on the SSJ package for defining models. You can find the latest version of SSJ here: https://github.com/shade-econ/sequence-jacobian.
+
+To install LD, open a terminal and type
+```
+pip install local-determancy
+```
+
+## Functions
+
+LD has three main functions:
+1) The onatski values of a jacobian
+```
+onatski(targets, endogenous, scale, T, ss0, H_U)
+```
+
+## Usage
+
+The LD package handles a variety of incomplete markets models. Please see the provided Jupyter notebooks for examples.
+Given the jacobian of a model, LD assesses local determinacy as follows:
+```
+T = 300
+exogenous = ['rstar', 'Z']
+unknowns = ['pi', 'w', 'Y']
+targets = ['nkpc_res', 'asset_mkt', 'labor_mkt']
+
+H_U = hank.jacobian(ss, unknowns, targets, T=T)
+
+onatski = ld.onatski(targets = targets, endogenous = unknowns, scale = 'A', T =T, ss0=ss0, H_U = H_U)
+
+windingNumber = ld.onatskiWindingNumber(onatski)
+
+windingNumber = ld.onatskiWindingNumber(onatski)
+print(ld.checkSolutions(windingNumber))
+
+ld.plot(onatski)
+```
