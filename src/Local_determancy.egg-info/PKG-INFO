@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: Local-determancy
+Version: 0.1.1
+Summary: A python package for assessing local determinacy in incomplete markets models.
+Author-email: Alfred Løvgren <alfred.lovgren@econ.uio.no>, Marcus Hagedorn <marcus.hagedorn@econ.uio.no>
+Project-URL: Homepage, https://github.com/alfredlov/local-determancy/
+Project-URL: Issues, https://github.com/alfredlov/local-determancy/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Local Determancy
+
+A python package for assessing local determinacy in incomplete markets models.
