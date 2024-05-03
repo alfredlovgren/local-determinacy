@@ -19,7 +19,6 @@ LD has three main functions:
 >>> onatski(targets, endogenous, scale, T, ss0, H_U)
 #Returns a vector of Onatski function outputs
 ```
-Re
 
 2) The winding number of a onatski function
 ```
