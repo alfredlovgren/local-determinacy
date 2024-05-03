@@ -61,3 +61,9 @@ print(ld.checkSolutions(windingNumber))
 
 ld.plot(onatski)
 ```
+
+## Authors
+
+This package was written by
+- Alfred Løvgren
+- Marcus Hagedorn
