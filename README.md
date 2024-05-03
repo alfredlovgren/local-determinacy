@@ -13,7 +13,7 @@ pip install local-determancy
 
 ## Functions
 
-LD has three main functions:
+The LD package has four main functions:
 1) The onatski values of a jacobian
 ```
 >>> onatski(targets, endogenous, scale, T, ss0, H_U)
@@ -32,11 +32,19 @@ LD has three main functions:
 #Returns a string assessment of local-determinacy
 ```
 
+4) A plot of the Onatski function
+```
+>>> plot(Onatski)
+#Returns a plot of the Onatski function in the complex space
+```
+
 ## Usage
 
 The LD package handles a variety of incomplete markets models. Please see the provided Jupyter notebooks for examples.
 Given the jacobian of a model, LD assesses local determinacy as follows:
 ```
+import local_determancy as ld
+
 T = 300
 exogenous = ['rstar', 'Z']
 unknowns = ['pi', 'w', 'Y']
