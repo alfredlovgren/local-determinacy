@@ -16,7 +16,21 @@ pip install local-determancy
 LD has three main functions:
 1) The onatski values of a jacobian
 ```
-onatski(targets, endogenous, scale, T, ss0, H_U)
+>>> onatski(targets, endogenous, scale, T, ss0, H_U)
+#Returns a vector of Onatski function outputs
+```
+Re
+
+2) The winding number of a onatski function
+```
+>>> onatskiWindingNumber(onatski)
+#Returns the winding number of a given sequence of Onatski function outputs
+```
+
+3) An assessment of local-determinacy
+```
+>>> checkSolutions(windingNumber)
+#Returns a string assessment of local-determinacy
 ```
 
 ## Usage
