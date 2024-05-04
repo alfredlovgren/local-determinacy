@@ -1,6 +1,6 @@
 # Local Determancy (LD)
 
-A python package for assessing local determinacy in incomplete markets models.
+A python package for assessing local determinacy in incomplete markets models. The theoretical framework framework is based on the working paper Local Determinacy in Incomplete-Markets Models, 2023 (Marcus Hagedorn) [https://drive.google.com/file/d/1gCMGgjyLEas3xmcxcBPyQ2vLwuBdzhLu/view]
 
 ## Requirements and installation
 
