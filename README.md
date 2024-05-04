@@ -4,7 +4,7 @@ A python package for assessing local determinacy in incomplete markets models.
 
 ## Requirements and installation
 
-LD runs on Python 3.7 or newer, and requires Python's core numerical libraries (NumPy, SciPy, Numba). LD relies on the SSJ package for defining models. You can find the latest version of SSJ here: https://github.com/shade-econ/sequence-jacobian.
+LD runs on Python 3.7 or newer, and requires Python's core numerical libraries (NumPy, SciPy, Numba). LD relies on the SSJ package for defining models. You can find the latest version of SSJ here: https://github.com/shade-econ/sequence-jacobian. Note that all requirements will be installed automatically.
 
 To install LD, open a terminal and type
 ```
