@@ -52,7 +52,7 @@ targets = ['nkpc_res', 'asset_mkt', 'labor_mkt']
 
 H_U = hank.jacobian(ss, unknowns, targets, T=T)
 
-onatski = ld.onatski(targets = targets, endogenous = unknowns, scale = 'A', T =T, ss0=ss0, H_U = H_U)
+onatski = ld.onatski(targets = targets, endogenous = unknowns, scale = 'A', T = T, ss0 = ss0, H_U = H_U)
 
 windingNumber = ld.onatskiWindingNumber(onatski)
 
