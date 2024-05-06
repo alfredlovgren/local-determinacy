@@ -13,7 +13,8 @@ def onatskiMatrix(x, C):
 def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_jacobian.classes.steady_state_dict.SteadyStateDict, 
             H_U: sequence_jacobian.classes.jacobian_dict.JacobianDict, nominal: bool = None, 
             exogenous: list = None, H_Z: sequence_jacobian.classes.jacobian_dict.JacobianDict = None) -> np.ndarray:
-    dReal = np.zeros((1,1))
+    
+    dReal = None
     ss0phiB = 1
 
     if (nominal != None):
