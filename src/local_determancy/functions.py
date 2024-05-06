@@ -10,7 +10,21 @@ def onatskiMatrix(x, C):
             dM[i, j] = C[i, j][0, x]
     return dM
 
-def onatski(targets, endogenous, scale, T, ss0, H_U):
+def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_jacobian.classes.steady_state_dict.SteadyStateDict, 
+            H_U: sequence_jacobian.classes.jacobian_dict.JacobianDict, nominal: bool = None, 
+            exogenous: list = None, H_Z: sequence_jacobian.classes.jacobian_dict.JacobianDict = None) -> np.ndarray:
+    dReal = np.zeros((1,1))
+    ss0phiB = 1
+
+    if (nominal != None):
+        if (nominal == True):
+            if ((exogenous == None) | (H_Z == None)):
+                raise Exception("Nominal model requires an exogenous parameter and a jacobian!")
+            else:
+                DReal = np.array(H_Z['asset_mkt'][exogenous])
+                dReal = DReal*(1+ss0['rstar'])/ss0[scale]
+                ss0phiB = ss0['phiB']
+        
     if (len(targets) != len(endogenous)):
         raise Exception("Number of targets and unknowns must be the same!")
 
@@ -30,7 +44,7 @@ def onatski(targets, endogenous, scale, T, ss0, H_U):
     valuesF = np.empty(1000, complex)
     for i in range(1000):
         if(len(targets) == 1):
-            valuesF[i] =sum((dU[0,0][0,x])*math.e**(-np.sqrt(-1+0j)*(x-1)*lambdas[i]) for x in range(0,T-1))
+            valuesF[i] =sum((dU[0,0][0,x])*math.e**(-np.sqrt(-1+0j)*(x-1)*lambdas[i]) for x in range(0,T-1)) + (ss0phiB-1)*dReal[0,0]*math.e**(np.sqrt(-1+0j)*lambdas[i])
         else:
             # valuesF_real[i] =complex(np.linalg.det(sum((onatskiMatrix(x, dU))*math.e**(-np.sqrt(-1+0j)*(x-1)*lambdas[i]) for x in range(0,T-1))))
             # valuesF_imag[i] =complex(np.linalg.det(sum((onatskiMatrix(x, dU))*math.e**(-np.sqrt(-1+0j)*(x-1)*lambdas[i]) for x in range(0,T-1))))
