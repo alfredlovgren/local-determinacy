@@ -8,7 +8,7 @@ LD runs on Python 3.7 or newer, and requires Python's core numerical libraries (
 
 To install LD, open a terminal and type
 ```
-pip install local-determancy
+pip install local-determinacy
 ```
 
 ## Functions
