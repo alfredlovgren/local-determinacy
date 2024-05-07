@@ -10,7 +10,7 @@ def onatskiMatrix(x, C):
             dM[i, j] = C[i, j][0, x]
     return dM
 
-def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_jacobian.classes.steady_state_dict.SteadyStateDict, 
+def onatski(targets: list, endogenous: list, T: int, ss0: sequence_jacobian.classes.steady_state_dict.SteadyStateDict, 
             H_U: sequence_jacobian.classes.jacobian_dict.JacobianDict, 
             predetermined: list = None,
             nominal: bool = None, 
@@ -25,7 +25,7 @@ def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_j
                 raise Exception("Nominal model requires an exogenous parameter and a jacobian!")
             else:
                 DReal = np.array(H_Z['asset_mkt'][exogenous])
-                dReal = DReal*(1+ss0['rstar'])/ss0[scale]
+                dReal = DReal*(1+ss0['rstar'])
                 ss0phiB = ss0['phiB'] #| 0 check if exists <---------------
         
     if (len(targets) != len(endogenous)):
@@ -36,10 +36,15 @@ def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_j
     for i, target in enumerate(targets):
         for j, unknown in enumerate(endogenous):
             if unknown in H_U[target]:
+                scale = 1
+
+                if(ss0[unknown] != 0):
+                    scale = ss0[unknown]
+                
                 if type(H_U[target][unknown]) is sequence_jacobian.classes.sparse_jacobians.SimpleSparse:
-                    dU[i, j] = np.array(np.squeeze(np.asarray(H_U[target][unknown].matrix(T)/ss0[scale])))
+                        dU[i, j] = np.array(np.squeeze(np.asarray(H_U[target][unknown].matrix(T)*scale)))
                 else:
-                    dU[i, j] = np.array(H_U[target][unknown]/ss0[scale])
+                    dU[i, j] = np.array(H_U[target][unknown]*scale)
                 
                 if(predetermined != None):
                     if(predetermined[j] == 0):
@@ -47,7 +52,7 @@ def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_j
 
             else:
                 dU[i, j] = np.zeros((T,T))
-                
+
     lambdas = np.linspace(0, 2*np.pi, 1000)
     valuesF = np.empty(1000, complex)
     for i in range(1000):
