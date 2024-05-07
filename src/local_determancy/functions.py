@@ -11,7 +11,9 @@ def onatskiMatrix(x, C):
     return dM
 
 def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_jacobian.classes.steady_state_dict.SteadyStateDict, 
-            H_U: sequence_jacobian.classes.jacobian_dict.JacobianDict, nominal: bool = None, 
+            H_U: sequence_jacobian.classes.jacobian_dict.JacobianDict, 
+            predetermined: list = None,
+            nominal: bool = None, 
             exogenous: str = None, H_Z: sequence_jacobian.classes.jacobian_dict.JacobianDict = None) -> np.ndarray:
     
     dReal = np.zeros((1, 1))
@@ -38,9 +40,14 @@ def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_j
                     dU[i, j] = np.array(np.squeeze(np.asarray(H_U[target][unknown].matrix(T)/ss0[scale])))
                 else:
                     dU[i, j] = np.array(H_U[target][unknown]/ss0[scale])
+                
+                if(predetermined != None):
+                    if(predetermined[j] == 0):
+                        dU[i, j] = np.insert(dU[i, j], 0, 0, axis=1)
+
             else:
                 dU[i, j] = np.zeros((T,T))
-
+                
     lambdas = np.linspace(0, 2*np.pi, 1000)
     valuesF = np.empty(1000, complex)
     for i in range(1000):
