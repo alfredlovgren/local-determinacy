@@ -12,10 +12,10 @@ def onatskiMatrix(x, C):
 
 def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_jacobian.classes.steady_state_dict.SteadyStateDict, 
             H_U: sequence_jacobian.classes.jacobian_dict.JacobianDict, nominal: bool = None, 
-            exogenous: list = None, H_Z: sequence_jacobian.classes.jacobian_dict.JacobianDict = None) -> np.ndarray:
+            exogenous: str = None, H_Z: sequence_jacobian.classes.jacobian_dict.JacobianDict = None) -> np.ndarray:
     
-    dReal = None
-    ss0phiB = 1
+    dReal = np.zeros((1, 1))
+    ss0phiB = 0
 
     if (nominal != None):
         if (nominal == True):
@@ -24,7 +24,7 @@ def onatski(targets: list, endogenous: list, scale: str, T: int, ss0: sequence_j
             else:
                 DReal = np.array(H_Z['asset_mkt'][exogenous])
                 dReal = DReal*(1+ss0['rstar'])/ss0[scale]
-                ss0phiB = ss0['phiB']
+                ss0phiB = ss0['phiB'] #| 0 check if exists <---------------
         
     if (len(targets) != len(endogenous)):
         raise Exception("Number of targets and unknowns must be the same!")
