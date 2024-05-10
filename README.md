@@ -27,7 +27,7 @@ for a Period $t$ vector $x_t$ of endogenous variables and square matrices $(M_k)
 ```math
 			{\Theta(\lambda)} = det \sum_{k=-j}^{\infty} A_k e^{-i k \lambda},
 ```
-- The ${\color{red} \text{Winding number}}$ is defined as  the number of times the graph of $\Theta(\lambda)$ rotates around zero counter-clockwise when $\lambda$ goes form $0$ to $2 \pi$.
+- The Winding number is defined as  the number of times the graph of $\Theta(\lambda)$ rotates around zero counter-clockwise when $\lambda$ goes form $0$ to $2 \pi$.
 
 - Ontaski (2006) shows
 	
