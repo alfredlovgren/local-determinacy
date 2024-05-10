@@ -25,17 +25,17 @@ for a Period $t$ vector $x_t$ of endogenous variables and square matrices $(M_k)
 
 -  Onatski (06) defines the complex function
 ```math
-			{\color{red} \Theta(\lambda)} = det \sum_{k=-j}^{\infty} A_k e^{-i k \lambda},
+			{\Theta(\lambda)} = det \sum_{k=-j}^{\infty} A_k e^{-i k \lambda},
 ```
 - The ${\color{red} \text{Winding number}}$ is defined as  the number of times the graph of $\Theta(\lambda)$ rotates around zero counter-clockwise when $\lambda$ goes form $0$ to $2 \pi$.
 
 - Ontaski (2006) shows
 	
-	- ${\color{red} \text{Determinacy}}$  (=unique bounded solution) if the ${\color{green} \text{winding number }}$  of $\Theta(\lambda)$ is equal to ${\color{green} \text{zero}}$.
+	- Determinacy (=unique bounded solution) if the winding number of $\Theta(\lambda)$ is equal to zero.
 
-	- ${\color{red} \text{ Multiple Solutions}}$    if winding number is ${\color{green} \text{less than zero}}$.
+	- Multiple Solutions if winding number is less than zero.
 
-	- ${\color{red} \text{ No Solution}}$ if winding number is ${\color{green} \text{larger than zero}}$.
+	- No Solution if winding number is larger than zero.
 
 
 ## Requirements and installation
