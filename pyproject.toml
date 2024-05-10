@@ -8,10 +8,11 @@ requires = [
     "sequence-jacobian>=1.0.0",
     "matplotlib>=1.16.0"
 ]
+
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "Local-determancy"
+name = "Local Determinacy"
 version = "0.1.1"
 authors = [
   { name="Alfred Løvgren", email="alfred.lovgren@econ.uio.no" },
