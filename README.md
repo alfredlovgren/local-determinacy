@@ -91,7 +91,7 @@ targets = ['asset_mkt']
 
 H_U = ha.jacobian(ss, unknowns, targets, T=T)
 
-onatski = ld.onatski(targets = targets, endogenous = unknowns, T =T, ss0=ss0, H_U = H_U)
+onatski = ld.onatski(targets = targets, endogenous = unknowns, T = T, ss0 = ss0, H_U = H_U)
 
 windingNumber = ld.onatskiWindingNumber(onatski)
 
