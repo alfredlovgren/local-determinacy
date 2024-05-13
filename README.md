@@ -48,7 +48,7 @@ LD uses the SSJ package of Bence Bardóczy, Michael Cai, Matthew Rognlie, Adrien
 
 To install LD, open a terminal and type
 ```
-pip install local-determinacy
+pip install local_determinacy
 ```
 ## Functions
 
