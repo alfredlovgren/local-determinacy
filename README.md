@@ -100,8 +100,8 @@ print(ld.checkSolutions(windingNumber))
 
 ld.plot(onatski)
 ```
-If government bonds are nominal, an addtional elasticity decscibing valuation effects need to be added.
-The default setting assumes that all variables (for example lagged inflation) are predetermined. In general, LD requires specifying predetermined and Nnon-predetermnined variables.
+If government bonds are nominal, an addtional elasticity decscibing valuation effects needs to be added.
+The default setting assumes that all variables (for example lagged inflation) are predetermined. In general, LD requires specifying lagged/predetermined variables.
 The notebook examples illustrate these options.
 
 <!-- ## Toolbox
