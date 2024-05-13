@@ -119,5 +119,6 @@ The Toolbox allows using the package without a Python compiler. The toolbox offe
 ## Authors
 
 This package was written by
-- Alfred Løvgren
 - Marcus Hagedorn
+- Alfred Løvgren
+
