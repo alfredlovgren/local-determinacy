@@ -82,7 +82,7 @@ The LD package has four main functions:
 The LD package handles a variety of incomplete markets models. Please see the provided Jupyter notebooks for examples.
 Given the jacobian $H_U$ of a model, in which the asset market clering condition is the only equilibrium condition and lagged inflation $piL$ is the only endogenous vaiable. LD assesses local determinacy in a simple incomplete markets model as follows:
 ```
-import local_determancy as ld
+import local_determinacy as ld
 
 T = 300   
 
