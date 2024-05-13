@@ -104,7 +104,7 @@ If government bonds are nominal, an addtional elasticity decscibing valuation ef
 The default setting assumes that all variables (for example lagged inflation) are predetermined. In general, LD requires specifying predetermined and Nnon-predetermnined variables.
 The notebook examples illustrate these options.
 
-## Toolbox
+<!-- ## Toolbox
 
 The Toolbox allows using the package without a Python compiler. The toolbox offers several model classes and parameters (right now policy parameters) can be chosen by the user:
 
@@ -114,7 +114,7 @@ The Toolbox allows using the package without a Python compiler. The toolbox offe
 - One asset incomplete-markets model with sticky prices and nominal bonds
 - One asset incomplete-markets model with flexible prices and FTPL tax rule
 - One asset incomplete-markets model with sticky prices and FTPL tax rule
-- ...
+- ... -->
 
 ## Authors
 

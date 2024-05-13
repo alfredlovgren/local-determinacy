@@ -88,7 +88,7 @@ def checkSolutions(F):
         return(winding_out + "\nThe economy is INDETERMINATE (NO SOLUTION)")    
     
     elif F < 0:
-        return(winding_out + "\nThe economy is INDETERMINATE (MULTIPLE SOLUTION)") 
+        return(winding_out + "\nThe economy is INDETERMINATE (MULTIPLE SOLUTIONS)") 
 
 def plot(F):
     plt.plot(F.real, F.imag, color='blue',linewidth=3)
