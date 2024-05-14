@@ -42,7 +42,7 @@ for a Period $t$ vector $x_t$ of endogenous variables and square matrices $(M_k)
 
 LD runs on Python 3.7 or newer, and requires Python's core numerical libraries (NumPy, SciPy, Numba).
 
-LD uses the methodology developped in  Auclert, Bardóczy, Rognlie, Straub (2021): "Using the Sequence-Space Jacobian to Solve and Estimate Heterogeneous-Agent Models" ([link to paper](https://www.bencebardoczy.com/publication/sequence-jacobian/sequence-jacobian.pdf)) to obtain the Jacobian matrix of the incomplete-markets model.
+LD uses the methodology developed in  Auclert, Bardóczy, Rognlie, Straub (2021): "Using the Sequence-Space Jacobian to Solve and Estimate Heterogeneous-Agent Models" ([link to paper](https://www.bencebardoczy.com/publication/sequence-jacobian/sequence-jacobian.pdf)) to obtain the Jacobian matrix of the incomplete-markets model.
 
 LD uses the SSJ package of Bence Bardóczy, Michael Cai, Matthew Rognlie, Adrien Auclert, Martin Souchier and Ludwig Straub. The latest version is available at https://github.com/shade-econ/sequence-jacobian. Note that all required packages will be installed automatically.
 
