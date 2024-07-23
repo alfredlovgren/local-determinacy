@@ -13,7 +13,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "local_determinacy"
-version = "0.1.4"
+version = "0.1.5"
 authors = [
   { name="Alfred Løvgren", email="alfred.lovgren@econ.uio.no" },
   { name="Marcus Hagedorn", email="marcus.hagedorn@econ.uio.no" },
