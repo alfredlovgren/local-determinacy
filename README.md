@@ -20,7 +20,7 @@ for a Period $t$ vector $x_t$ of endogenous variables and square matrices $(M_k)
 
 -  The SSJ package delivers the derivatives of the asset market clearing condition, $A(\pi_{t-1},\pi_t, \pi_{t+1}, \ldots, \pi_{t+k}, \ldots) - B = 0$,
 ```math
-		A_k = \frac{\partial (A(\ldots) - B)}{\partial x_{t+k}} =  \frac{\partial (A(\ldots) - B)}{\partial \pi_{t-1+k}}, \text{ \hspace{0.2cm} where \hspace{0.1cm}} $x_{t+k} = \pi_{t+k-1} \hspace{0.1cm}$\text{, for \hspace{0.2cm}} k=-1,0,1,2,\ldots
+		A_k = \frac{\partial (A(\ldots) - B)}{\partial x_{t+k}} =  \frac{\partial (A(\ldots) - B)}{\partial \pi_{t-1+k}}, \text{ \hspace{0.2cm} where \hspace{0.1cm}} x_{t+k} = \pi_{t+k-1} \text{\hspace{0.1cm}, for \hspace{0.2cm}} k=-1,0,1,2,\ldots
 ```	
 
 -  Onatski (06) defines the complex function
